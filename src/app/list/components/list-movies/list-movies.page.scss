@@ -1,0 +1,70 @@
+th {
+  text-align: center;
+  width: 200px !important;
+}
+
+form {
+  padding: 0;
+}
+
+#movieYear {
+  margin: 8px;
+}
+
+#winner-select {
+  margin-top: 8px;
+  padding: 0 8px;
+}
+.pagination .v-align-center {
+  padding: 0;
+}
+
+/* Pagination links */
+.pagination a {
+  color: #141414;
+  float: left;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  line-height: 24px;
+  margin: 0px;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+  background-color: #666666;
+}
+
+.material-symbols-outlined {
+  padding: 0;
+  margin: 0;
+}
+
+#table-paginator {
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  height:56px;
+}
+
+.v-space-16 {
+  height: 16px;
+  width: 100%;
+}
+
+#spinner {
+  gap:8px;
+}
+
+
+.error-msg {
+  color:red;
+  letter-spacing: 1.5px;
+  font-size:11px;
+}

@@ -1,0 +1,60 @@
+<div class="card">
+
+  <div class="card-title">
+    Producers with longest and shortest interval between wins
+  </div>
+
+  <div class="card-content">
+
+    <div id="maximum">
+
+      <div class="subheading-1">Maximun</div>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Producer</th>
+            <th>interval</th>
+            <th>Previous Year</th>
+            <th>Follownig Year</th>
+          </tr>
+          @for(p of producerWinInterval.max; track p) {
+          <tr>
+            <td class="flex-1">{{ p.producer || 'N/A' }}</td>
+            <td class="flex-1">{{ p.interval || 'N/A' }}</td>
+            <td class="flex-1">{{ p.previousWin || 'N/A' }}</td>
+            <td class="flex-1">{{ p.followingWin || 'N/A' }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="minimum">
+
+      <div class="subheading-1">Minimum</div>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Producer</th>
+            <th>Interval</th>
+            <th>Previous year</th>
+            <th>Following year</th>
+          </tr>
+          @for(p of producerWinInterval.min; track p) {
+          <tr>
+            <td>{{ p.producer }}</td>
+            <td>{{ p.interval }}</td>
+            <td>{{ p.previousWin }}</td>
+            <td>{{ p.followingWin }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

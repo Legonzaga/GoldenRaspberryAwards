@@ -1,0 +1,28 @@
+<div class="card">
+
+  <div class="card-title">
+    List years with multiple winners
+  </div>
+
+  <div class="card-content">
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Year</th>
+          <th>Win count</th>
+        </tr>
+        @for(y of yearsWithMostWinners; track y){
+          <tr>
+            <td>{{ y.year }}</td>
+            <td>{{ y.winnerCount }}</td>
+          </tr>  
+        }
+      </tbody>
+    </table>
+
+
+  </div>
+
+</div>
