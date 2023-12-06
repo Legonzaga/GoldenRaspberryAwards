@@ -1,4 +1,4 @@
-# Project Awards - Texo IT
+# Project Golden Raspberry Awards - Texo IT
 
  This project intends to develop an interface to enable reading the list of nominees and winners
 in the Worst Film category at the Golden Raspberry Awards.
@@ -10,13 +10,15 @@ Author: Lean Vasconcellos
 
 This project was generated with Ionic Framework] [(https://github.com/angular/angular-cli)](https://ionicframework.com/docs/intro/cli) version 7.
 
-Install Ionic Framework
+## Install Ionic Framework
 npm install -g @ionic/cli
 
 ------------------------
 
-Installing node packages
+## Installing node packages
 npm i
+
+------------------------
 
 ## Running application
 
