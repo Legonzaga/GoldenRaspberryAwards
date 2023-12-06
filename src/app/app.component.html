@@ -16,16 +16,15 @@
 
         <ion-col size="2">
 
-          <div class="menu-bg"></div>
-
-          <div class="menu flex-1" style="position:absolute; z-index: 1;">
-
+          <div class="menu flex-1">
+            
             <a routerLink="dashboard" [routerLinkActive]="['active-link']">Dashboard</a>
             <br />
             <a routerLink="/list/0" [routerLinkActive]="['active-link']"
               [routerLinkActiveOptions]="{exact: true}">List</a>
-
           </div>
+
+          <div class="menu-bg"></div>
 
         </ion-col>
 

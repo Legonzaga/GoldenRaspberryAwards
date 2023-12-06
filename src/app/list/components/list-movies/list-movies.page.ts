@@ -74,11 +74,31 @@ export class ListMoviesPage implements OnInit {
 
   ngOnInit(): void {
 
+    let movieYear = null;
+
+    let winnerSelect = null;
+
+    try {
+
+      movieYear = localStorage.getItem("movieYear");
+
+      winnerSelect = localStorage.getItem("winner");
+
+      this.movieForm.controls['movieYear'].setValue(parseInt(movieYear ??  this.movieForm.value.movieYear));
+
+      this.movieForm.controls['winnerSelect'].setValue(winnerSelect ?? this.movieForm.value.winnerSelect);
+
+    } catch(e) {
+      console.log("Error", e);
+    }    
+
     this.paginator.pageNumber = this.route.snapshot.params['pageNumber'];
 
     this.paginator.pageSize = 15;
 
-    this.urlSuffix = this.urlBuilder(this.paginator, null, null);
+    winnerSelect = winnerSelect === 'default' ? null : winnerSelect;
+
+    this.urlSuffix = this.urlBuilder(this.paginator, winnerSelect, null);
 
     this.listMovies(this.paginator, this.urlSuffix);
 
@@ -132,7 +152,7 @@ export class ListMoviesPage implements OnInit {
    * @param year : number => movie year
    * @returns : string => An URL to listMovies method
    */
-  urlBuilder(pageable: Paginator | null, winner: boolean | null, year: number | null): string {
+  urlBuilder(pageable: Paginator | null, winner: any, year: any): string {
 
     let pagination = new Paginator();
 
@@ -184,7 +204,7 @@ export class ListMoviesPage implements OnInit {
 
   filtering() {
 
-    if (isNaN(this.movieForm.value.movieYear)) {
+    if (isNaN(this.movieForm.value.movieYear) && this.movieForm.controls['movieYear'].value.length > 1) {
 
       this.movieForm.controls['movieYear'].setValue('');
   
@@ -197,7 +217,7 @@ export class ListMoviesPage implements OnInit {
 
     let movieYear = parseInt(this.movieForm.value.movieYear);
 
-    if (this.movieForm.controls['movieYear'].value.length === 4) {
+    if (this.movieForm.controls['movieYear'].value.length === 4 || this.movieForm.controls['movieYear'].value.length === 0) {
 
       this.filterResult = [];
 
@@ -221,23 +241,23 @@ export class ListMoviesPage implements OnInit {
         this.listMovies(this.paginator, this.urlSuffix);
 
       }
-      else if (isNaN(movieYear) && winner === 'default') {
+      else if (isNaN(movieYear) ) {
        
         this.movieForm.disable();
 
-        this.urlSuffix = this.urlBuilder(this.paginator, null, null);
+        winner = winner == 'default' ? null : winner;
+
+        this.urlSuffix = this.urlBuilder(this.paginator, winner, null);
 
         this.listMovies(this.paginator, this.urlSuffix);
 
       }
       else {       
-
         this.movieForm.enable();
-
       }
 
-
     }
+
   }
 
   hideYearTypeError() {
@@ -254,6 +274,10 @@ export class ListMoviesPage implements OnInit {
     let winner = this.movieForm.value.winnerSelect;
 
     let movieYear = this.movieForm.value.movieYear;
+
+    localStorage.setItem("winner", winner);
+
+    localStorage.setItem("movieYear", movieYear?.toString());
 
     this.filterResult = [];
 

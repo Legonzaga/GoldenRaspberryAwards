@@ -58,6 +58,26 @@
         "hash": "1405511431251118388"
       },
       {
+        "file": ".nx/cache/file-map.json",
+        "hash": "10366662855085232241"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "16737731461328981136"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "288043971929916046"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "1762290036564299992"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "5750598100807791428"
+      },
+      {
         "file": "README.md",
         "hash": "7433406520447363198"
       },
@@ -167,7 +187,7 @@
       },
       {
         "file": "src/app/app.component.html",
-        "hash": "8393005513004378413"
+        "hash": "16256291001897838439"
       },
       {
         "file": "src/app/app.component.scss",
@@ -227,7 +247,7 @@
       },
       {
         "file": "src/app/list/components/list-movies/list-movies.page.ts",
-        "hash": "2067266325521585991"
+        "hash": "17228167372142726782"
       },
       {
         "file": "src/app/list/list.page.html",
@@ -299,11 +319,11 @@
       },
       {
         "file": "src/global.scss",
-        "hash": "12478869910105531565"
+        "hash": "17000023319059685029"
       },
       {
         "file": "src/index.html",
-        "hash": "3622999778905848032"
+        "hash": "17412926606184192634"
       },
       {
         "file": "src/main.ts",
@@ -319,7 +339,7 @@
       },
       {
         "file": "src/theme/components.scss",
-        "hash": "5338884872693519172"
+        "hash": "16331660658330949378"
       },
       {
         "file": "src/theme/flex.scss",
