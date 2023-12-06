@@ -1,0 +1,104 @@
+<div class="card">
+
+  <div class="card-title">
+    List movies
+  </div>
+
+  <div class="card-content">
+    <form [formGroup]="movieForm">
+      <table>
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <th>
+              <div class="flex direction-column">
+                <div class="flex center flex-1">
+                  Year
+                </div>
+                <div class="flex center flex-1 column">
+                  <input id="movieYear" type="text" formControlName="movieYear" label="Filter by year" maxlength="4"
+                    min="1900" max="2999" placeholder="Filter by year" (ngModelChange)="filtering()">
+                </div>
+                @if(showYearErroType){
+                <div class="error-msg">Please type a year!</div>
+                }
+              </div>
+            </th>
+            <th>Title</th>
+            <th>
+              Winner?
+              <select id="winner-select" formControlName="winnerSelect" name="select" (change)="filteringByWinner()">
+                <option value="default" selected>Yes/No</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr *ngFor="let m of (filterResult.length > 0 ? filterResult : movies)">
+            <td>{{ m.id }}</td>
+            <td>{{ m.year }}</td>
+            <td>{{ m.title }}</td>
+            <td>{{ m.winner == true ? 'Yes' : 'No' }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" id="table-paginator">
+
+              <div class="flex center">
+
+                <div class="pagination v-align-center">
+
+                  @if(paginator.pageNumber > 2){
+                  <a routerLink="/list/0">
+                    <ion-icon size="medium" name="play-skip-back-outline"></ion-icon>
+                  </a>
+                  }
+
+                  @if(paginator.pageNumber > 2) {
+                  <a [routerLink]="['/list', previusPage]">
+                    <ion-icon size="medium" name="chevron-back-outline"></ion-icon>
+                  </a>
+                  }
+
+                  <span *ngFor="let p of paginationItems.link;  let i = index">
+
+                    @if(paginator.pageNumber > (i-3) && paginator.pageNumber < (i+3)) { <span>
+                      <a [routerLink]="p" [routerLinkActive]="['active']">{{ i + 1 }}</a>
+                  </span>
+                  }
+
+                  </span>
+
+                  @if(paginator.pageNumber < paginationItems.link.length - 2) { <a [routerLink]="['/list/', nextPage]">
+                    <ion-icon size="medium" name="chevron-forward-outline"></ion-icon>
+                    </a>
+                    }
+
+                    @if(paginator.pageNumber < paginationItems.link.length - 2) { <a
+                      [routerLink]="'/list/' + totalPages">
+                      <ion-icon size="medium" name="play-skip-forward-outline"></ion-icon>
+                      </a>
+                      }
+
+                </div>
+
+              </div>
+
+            </td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </form>
+    <div class="v-space-16"></div>
+
+    @if(isLoading){
+    <div id="spinner" class="flex v-align-center center">
+      <app-default-spinner></app-default-spinner> <span>Loading movies...</span>
+    </div>
+    }
+
+  </div>
+
+</div>

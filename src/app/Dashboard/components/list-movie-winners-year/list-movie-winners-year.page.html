@@ -1,0 +1,54 @@
+<div class="card">
+
+  <div class="card-title">
+    List movies winners by year
+  </div>
+
+  <div class="card-content">
+
+    <div id="form-container">
+
+      <form [formGroup]="searchMovieForm">
+
+        <div class="flex v-align-center">
+
+          <input id="movieYear" formControlName="movieYear" type="number" label="Search by year" min="1900" max="2999"
+            maxlength="4" placeholder="Search by year">
+
+          @if(!isLoading) {
+            <ion-button color="primary" type="button" (click)="searchMovieByYear()">
+              <ion-icon name="search-outline" color="light"></ion-icon>
+          </ion-button>
+          }
+
+          @if(isLoading) {
+            <app-default-spinner></app-default-spinner>
+          }
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div id="winners-list">
+      <table>
+        <tbody>
+          <tr>
+            <th>Id</th>
+            <th>Year</th>
+            <th>Title</th>
+          </tr>
+          <tr *ngFor="let movie of winnersMovieList">
+            <td>{{ movie.id || 'N/A'}}</td>
+            <td>{{ movie.year || 'N/A' }}</td>
+            <td>{{ movie.title || 'N/A' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

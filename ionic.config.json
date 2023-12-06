@@ -1,0 +1,7 @@
+{
+  "name": "GoldenRaspberryAwards",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,207 @@
+/* Flex */
+
+.flex {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  .flex-2 {
+    flex: 2;
+  }
+  
+  
+  .flex-3 {
+    flex: 4;
+  }
+  
+  .flex-4 {
+    flex: 4;
+  }
+  
+  .flex-5 {
+    flex: 5;
+  }
+  
+  .flex-6 {
+    flex: 6;
+  }
+  
+  // * Flex Direction
+  .direction-row {
+    flex-direction: row;
+  }
+  
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .direction-column {
+    flex-direction: column;
+  }
+  
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
+  
+  // * Flex Wrap
+  .nowrap {
+    flex-wrap: nowrap;
+  }
+  
+  .wrap {
+    flex-wrap: wrap;
+  }
+  
+  .wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  
+  // * Flex Flow
+  .row-nowrap {
+    flex-flow: row nowrap;
+  }
+  
+  .column-nowrap {
+    flex-flow: column nowrap;
+  }
+  
+  .row-wrap {
+    flex-flow: row wrap;
+  }
+  
+  // ** Justify Content
+  .flex-start {
+    justify-content: flex-start;
+  }
+  
+  .flex-end {
+    justify-content: flex-end;
+  }
+  
+  .center {
+    justify-content: center;
+  }
+  
+  .space-between {
+    justify-content: space-between;
+  }
+  
+  .space-around {
+    justify-content: space-around;
+  }
+  
+  // *** Vertical Alignment
+  .v-align-stretch {
+    align-items: stretch;
+  }
+  
+  .v-align-start {
+    align-items: flex-start;
+  }
+  
+  .v-align-end {
+    align-items: flex-end;
+  }
+  
+  .v-align-center {
+    align-items: center;
+  }
+  
+  // *** Content Alignment
+  .content-stretch {
+    align-content: stretch;
+  }
+  
+  ​ .content--start {
+    align-content: flex-start;
+  }
+  
+  ​ .content--end {
+    align-content: flex-end;
+  }
+  
+  ​ .content-center {
+    align-content: center;
+  }
+  
+  ​ .content-space-between {
+    align-content: space-between;
+  }
+  
+  ​ .content-space-around {
+    align-content: space-around;
+  }
+  
+  // ​*** Flex grow
+  
+  /* Os itens não se expandem para ocupar o container. */
+  
+  .grow0 {
+    flex-grow: 0;
+  }
+  
+  
+  /* Os itens se expandem igualmente para ocupar o container. Utilizando apenas o flex-grow, o crescimento é distribuído igualmente antes e depois do conteúdo de cada elemento. (pois por padrão o flex-basis é auto) */
+  
+  .grow1 {
+    flex-grow: 1;
+  }
+  
+  /* Os itens se expandem duas vezes mais que aqueles com flex-grow: 1; */
+  
+  .grow2 {
+    flex-grow: 2;
+  }
+  
+  .grow3 {
+    flex-grow: 3;
+  }
+  
+  .grow4 {
+    flex-grow: 4;
+  }
+  
+  .grow5 {
+    flex-grow: 5;
+  }
+  
+  .grow6 {
+    flex-grow: 6;
+  }
+  
+  // *** Flex Ordering
+  .order1 {
+    order: 1;
+  }
+  
+  .order2 {
+    order: 2;
+  }
+  
+  .order3 {
+    order: 3;
+  }
+  
+  .order4 {
+    order: 4;
+  }
+  
+  .order-1 {
+    order: -1;
+  }
+  
+  
+  .row {
+    display: flex;
+    padding:16px 24px;
+    gap:24px;
+  }
+  
+  
+  .grow-1 {
+    flex: 1;
+  }
